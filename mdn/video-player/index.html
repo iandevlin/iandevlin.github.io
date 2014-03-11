@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+	<meta charset="utf-8" />
+	<title>Cross Browser Video Player - Mozilla</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv-printshiv.min.js" type="text/javascript"></script><![endif]-->
+</head>
+<body>
+	<h1>Tears of Steel</h1>
+	<figure id="videoContainer" data-fullscreen="false">
+		<video id="video" controls preload="metadata" poster="img/poster.jpg">
+			<source src="video/tears-of-steel-battle-clip-medium.mp4" type="video/mp4"></source>
+			<source src="video/tears-of-steel-battle-clip-medium.webm" type="video/webm"></source>
+			<source src="video/tears-of-steel-battle-clip-medium.ogg" type="video/ogg"></source>
+			<!-- Flash fallback -->
+			<object type="application/x-shockwave-flash" data="flash-player.swf?videoUrl=video/tears-of-steel-battle-clip-medium.mp4" width="1024" height="576">
+				<param name="movie" value="flash-player.swf?videoUrl=video/tears-of-steel-battle-clip-medium.mp4" />
+				<param name="allowfullscreen" value="true" />
+				<param name="wmode" value="transparent" />
+				<param name="flashvars" value="controlbar=over&amp;image=img/poster.jpg&amp;file=flash-player.swf?videoUrl=video/tears-of-steel-battle-clip-medium.mp4" />
+				<img alt="Tears of Steel poster image" src="img/poster.jpg" width="1024" height="428" title="No video playback possible, please download the video from the link below" />
+			</object>
+			<!-- Offer download -->
+			<a href="video/tears-of-steel-battle-clip-medium.mp4">Download MP4</a>
+		</video>
+		<ul id="video-controls" class="controls">
+			<li><button id="playpause" type="button">Play/Pause</button></li>
+			<li><button id="stop" type="button">Stop</button></li>
+			<li class="progress">
+				<progress id="progress" value="0" min="0">
+					<span id="progress-bar"></span>
+				</progress>
+			</li>
+			<li><button id="mute" type="button">Mute/Unmute</button></li>
+			<li><button id="volinc" type="button">Vol+</button></li>
+			<li><button id="voldec" type="button">Vol-</button></li>
+			<li><button id="fs" type="button">Fullscreen</button></li>
+		</ul>
+		<figcaption>
+			&copy; Blender Foundation | <a href="http://mango.blender.org">mango.blender.org</a>
+		</figcaption>
+	</figure>
+	<script src="js/video-player.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+html,body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}
+body {
+	color:#333;
+	font-family:"Lucida Grande","Lucida Sans Unicode","DejaVu Sans",Lucida,Arial,Helvetica,sans-serif;
+}
+h1 {
+	color:#333;
+	font-size:20px;
+	font-size:1.25rem;
+}
+a {
+	color:#0095dd;
+	text-decoration:none;
+}
+a:hover, a:focus {
+	color:#2255aa;
+	text-decoration:underline;
+}
+figure {
+	max-width:1024px;
+	max-width:64rem;
+	width:100%;
+	height:auto;
+	margin:20px 0 0;
+	margin:1.25rem 0 0;
+}
+figcaption {
+	display:block;
+	font-size:16px;
+	font-size:1rem;
+}
+video {
+	width:100%;
+	height:auto;
+}
+
+/* controls */
+.controls, .controls li {
+	padding:0;
+	margin:0;
+}
+.controls {
+	display:none;
+	list-style-type:none;
+	overflow:hidden;
+	background:transparent;
+}
+.controls li {
+	float:left;
+	width:10%;
+	margin-left:0.3%;
+}
+.controls li:first-child {
+	margin-left:0;
+}
+.controls .progress {
+	width:38%;
+	cursor:pointer;
+}
+.controls button {
+	width:100%;
+	text-align:center;
+	overflow:hidden;
+	white-space:nowrap;
+  	text-overflow:ellipsis;
+}
+.controls progress {
+	display:block;
+	width:100%;
+	height:20px;
+	height:1.25rem;
+	margin-top:2px;
+	margin-top:0.125rem;
+	border:1px solid #aaa;
+	overflow:hidden;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.controls progress span {
+	width:0%;
+	height:100%;
+	display:inline-block;
+	background-color:#2a84cd;	
+}
+
+/* fullscreen */
+html:-ms-fullscreen {
+	width:100%;
+}
+:-webkit-full-screen {
+	background-color:transparent;
+}
+/* hide controls on fullscreen with WebKit */
+figure[data-fullscreen=true] video::-webkit-media-controls {
+	display:none !important;
+}
+figure[data-fullscreen=true] {
+	max-width:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+figure[data-fullscreen=true] video {
+	height:auto;
+}
+figure[data-fullscreen=true] figcaption {
+	display:none;
+}
+figure[data-fullscreen=true] .controls {
+	position:absolute;
+	bottom:2%;
+	width:100%;
+	z-index:2147483647;
+}
+figure[data-fullscreen=true] .controls li {
+	width:5%;
+}
+figure[data-fullscreen=true] .controls .progress {
+	width:68%;
+}
