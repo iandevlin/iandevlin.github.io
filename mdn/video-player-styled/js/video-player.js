@@ -25,7 +25,6 @@
 		var progress = document.getElementById('progress');
 		var progressBar = document.getElementById('progress-bar');
 		var fullscreen = document.getElementById('fs');
-		var progressItem = progress.parentNode;
 
 		// If the browser doesn't support the progress element, set its state for some different styling
 		var supportsProgress = (document.createElement('progress').max !== undefined);
@@ -104,7 +103,6 @@
 
 		// Only add the events if addEventListener is supported (IE8 and less don't support it, but that will use Flash anyway)
 		if (document.addEventListener) {
-
 			// Wait for the video's meta data to be loaded, then set the progress bar's max value to the duration of the video
 			video.addEventListener('loadedmetadata', function() {
 				progress.setAttribute('max', video.duration);
