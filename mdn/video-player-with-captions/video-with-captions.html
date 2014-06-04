@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+	<meta charset="utf-8" />
+	<title>Video Player with Captions - Mozilla</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+	<h1>Sintel</h1>
+	<figure id="videoContainer" data-fullscreen="false">
+		<video id="video" controls preload="metadata">
+			<source src="video/sintel-short.mp4" type="video/mp4">
+			<source src="video/sintel-short.webm" type="video/webm">
+			<track label="English" kind="captions" srclang="en" src="captions/vtt/sintel-en.vtt" default>
+			<track label="Deutsch" kind="captions" srclang="de" src="captions/vtt/sintel-de.vtt">
+			<track label="Español" kind="captions" srclang="es" src="captions/vtt/sintel-es.vtt">
+		</video>
+		<figcaption>
+			&copy; copyright Blender Foundation | <a href="http://www.sintel.org">www.sintel.org</a>
+		</figcaption>
+	</figure>
+</body>
+</html>
