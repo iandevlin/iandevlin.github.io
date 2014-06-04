@@ -200,9 +200,6 @@ video {
 ::cue { 
 	color:#ccc;
 }
-::cue(#\31 ) {
-	color:red;
-}
 ::cue(v[voice='Test']) {
 	color:#fff;
 	background:#0095dd;
