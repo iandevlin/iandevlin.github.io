@@ -25,7 +25,7 @@
 		var progress = document.getElementById('progress');
 		var progressBar = document.getElementById('progress-bar');
 		var fullscreen = document.getElementById('fs');
-		var captions = document.getElementById('captions');
+		var subtitles = document.getElementById('subtitles');
 
 		// If the browser doesn't support the progress element, set its state for some different styling
 		var supportsProgress = (document.createElement('progress').max !== undefined);
@@ -143,31 +143,31 @@
 				else video.pause();
 			});	
 
-			// Turn off all captions
+			// Turn off all subtitles
 			for (var i = 0; i < video.textTracks.length; i++) {
 				video.textTracks[i].mode = 'hidden';
 			}
 
-			// Creates and returns a menu item for the captions language menu
-			var captionMenuButtons = [];
+			// Creates and returns a menu item for the subtitles language menu
+			var subtitleMenuButtons = [];
 			var createMenuItem = function(id, lang, label) {
 				var listItem = document.createElement('li');
 				var button = listItem.appendChild(document.createElement('button'));
 				button.setAttribute('id', id);
-				button.className = 'captions-button';
+				button.className = 'subtitles-button';
 				if (lang.length > 0) button.setAttribute('lang', lang);
 				button.value = label;
 				button.setAttribute('data-state', 'inactive');
 				button.appendChild(document.createTextNode(label));
 				button.addEventListener('click', function(e) {
 					// Set all buttons to inactive
-					captionMenuButtons.map(function(v, i, a) {
-						captionMenuButtons[i].setAttribute('data-state', 'inactive');
+					subtitleMenuButtons.map(function(v, i, a) {
+						subtitleMenuButtons[i].setAttribute('data-state', 'inactive');
 					});
 					// Find the language to activate
 					var lang = this.getAttribute('lang');
 					for (var i = 0; i < video.textTracks.length; i++) {
-						// For the 'captions-off' button, the first condition will never match so all will captions be turned off
+						// For the 'subtitles-off' button, the first condition will never match so all will subtitles be turned off
 						if (video.textTracks[i].language == lang) {
 							video.textTracks[i].mode = 'showing';
 							this.setAttribute('data-state', 'active');
@@ -176,26 +176,26 @@
 							video.textTracks[i].mode = 'hidden';
 						}
 					}
-					captionsMenu.style.display = 'none';
+					subtitlesMenu.style.display = 'none';
 				});
-				captionMenuButtons.push(button);
+				subtitleMenuButtons.push(button);
 				return listItem;
 			}
 			// Go through each one and build a small clickable list, and when each item is clicked on, set its mode to be "showing" and the others to be "hidden"
-			var captionsMenu;
+			var subtitlesMenu;
 			if (video.textTracks) {
 				var df = document.createDocumentFragment();
-				var captionsMenu = df.appendChild(document.createElement('ul'));
-				captionsMenu.className = 'captions-menu';
-				captionsMenu.appendChild(createMenuItem('captions-off', '', 'Off'));
+				var subtitlesMenu = df.appendChild(document.createElement('ul'));
+				subtitlesMenu.className = 'subtitles-menu';
+				subtitlesMenu.appendChild(createMenuItem('subtitles-off', '', 'Off'));
 				for (var i = 0; i < video.textTracks.length; i++) {
-					captionsMenu.appendChild(createMenuItem('captions-' + video.textTracks[i].language, video.textTracks[i].language, video.textTracks[i].label));
+					subtitlesMenu.appendChild(createMenuItem('subtitles-' + video.textTracks[i].language, video.textTracks[i].language, video.textTracks[i].label));
 				}
-				videoContainer.appendChild(captionsMenu);
+				videoContainer.appendChild(subtitlesMenu);
 			}
-			captions.addEventListener('click', function(e) {
-				if (captionsMenu) {
-					captionsMenu.style.display = (captionsMenu.style.display == 'block' ? 'none' : 'block');
+			subtitles.addEventListener('click', function(e) {
+				if (subtitlesMenu) {
+					subtitlesMenu.style.display = (subtitlesMenu.style.display == 'block' ? 'none' : 'block');
 				}
 			});
 

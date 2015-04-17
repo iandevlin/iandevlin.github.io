@@ -2,7 +2,7 @@
 <html lang="en-IE">
 <head>
 	<meta charset="utf-8" />
-	<title>Styled Video Player with Captions - Mozilla</title>
+	<title>Styled Video Player with Subtitles - Mozilla</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="css/styles.css" />
 	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv-printshiv.min.js" type="text/javascript"></script><![endif]-->
@@ -13,9 +13,9 @@
 		<video id="video" controls preload="metadata">
 			<source src="video/sintel-short.mp4" type="video/mp4">
 			<source src="video/sintel-short.webm" type="video/webm">
-			<track label="English" kind="subtitles" srclang="en" src="captions/vtt/sintel-en.vtt" default>
-			<track label="Deutsch" kind="subtitles" srclang="de" src="captions/vtt/sintel-de.vtt">
-			<track label="Español" kind="subtitles" srclang="es" src="captions/vtt/sintel-es.vtt">
+			<track label="English" kind="subtitles" srclang="en" src="subtitles/vtt/sintel-en.vtt" default>
+			<track label="Deutsch" kind="subtitles" srclang="de" src="subtitles/vtt/sintel-de.vtt">
+			<track label="Español" kind="subtitles" srclang="es" src="subtitles/vtt/sintel-es.vtt">
 		</video>
 		<div id="video-controls" class="controls" data-state="hidden">
 			<button id="playpause" type="button" data-state="play">Play/Pause</button>
@@ -29,7 +29,7 @@
 			<button id="volinc" type="button" data-state="volup">Vol+</button>
 			<button id="voldec" type="button" data-state="voldown">Vol-</button>
 			<button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
-			<button id="captions" type="button" data-state="captions">CC</button>
+			<button id="subtitles" type="button" data-state="subtitles">CC</button>
 		</div>
 		<figcaption>
 			&copy; copyright Blender Foundation | <a href="http://www.sintel.org">www.sintel.org</a>

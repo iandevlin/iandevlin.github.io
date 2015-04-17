@@ -94,8 +94,8 @@ video {
 	background-size:contain;
 	background-repeat:no-repeat;
 }
-.controls button:hover, .controls button:focus, .captions-menu li button:hover, .captions-menu li button:focus,
-.captions-menu li button[data-state="active"] {
+.controls button:hover, .controls button:focus, .subtitles-menu li button:hover, .subtitles-menu li button:focus,
+.subtitles-menu li button[data-state="active"] {
 	opacity:0.5;
 }
 .controls button[data-state="play"] {
@@ -125,7 +125,7 @@ video {
 .controls button[data-state="cancel-fullscreen"] {
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCM0M2OUNCOUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMzlFNDkzMUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+1VELOwAAAadJREFUeNrs2EtOwzAQBuAEOAEIKsQluAAbGqSGHRIrEKveoQEWNOF0SFyGZ6GkwowlWwpm7IwdT8kiI/2LWk39yY4faiqESPpcG0nPq/fARE5xM0btrIGw7fQ4gJeQJ8gRI24MeYac+wIvICv5fcgrE1Li3lUftUZSgAeQhXpQMCGbOJ03yC51BM8gSyYkhpN95b7voA+yQtpukLbMgjsNWSRUZKXa/2wQBjJzjVwosA1ZNdowoMwtFRcKtCHNzzagsDybk/ZlItCGpAJJuK5AjVx1ANYuHAb0PYsPIZsdtpgt9RvRzuIEWa1dp1hYtqBOU3zf0qEvUK/uVmBqotI0/ffb1XBhHYBIlQyL5Dr2NlNGBBZcJ0kZAVhwniQP6qgLrS/II9dJMoF8RhhBee06jj3FGK72ANYIchwLiOFkByeQOQFYqCv9koL0BeYOnK65AzgzfgtDZqFACk7XHdI2Q9pakVTgxAPnW7lruinAfcgHE86FfIHsUUdwCvlmwmFIubde+b6DU/V3BAeuiVxoXMgqHq3hwjLyulEP98EBOAB/148AAwA7RI/R8UopbwAAAABJRU5ErkJggg==');	
 }
-.controls button[data-state="captions"] {
+.controls button[data-state="subtitles"] {
 	height:85%;
 	text-indent:0;
 	font-size:16px;
@@ -167,8 +167,8 @@ video {
 .controls progress::-webkit-progress-value {
 	background-color:#0095dd;
 }
-/* captions menu */
-.captions-menu {
+/* subtitles menu */
+.subtitles-menu {
 	display:none;
 	position:absolute;
 	bottom:14.8%;
@@ -180,11 +180,11 @@ video {
 	width:100px;
 	padding:10px;
 }
-.captions-menu li {
+.subtitles-menu li {
 	padding:0;
 	text-align:center;
 }
-.captions-menu li button {
+.subtitles-menu li button {
 	border:none;
 	background:#000;
 	color:#fff;
@@ -261,13 +261,13 @@ figure[data-fullscreen=true] .controls .progress {
 		height:30px;
 		height:1.876rem;
 	}
-	.controls button[data-state="captions"] {
+	.controls button[data-state="subtitles"] {
 		font-size:0.6875rem;
 	}
-	.captions-menu {
+	.subtitles-menu {
 		right:0;
 	}
-	.captions-menu li button {
+	.subtitles-menu li button {
 		font-size:0.6875rem;
 	}
 }
@@ -284,7 +284,7 @@ figure[data-fullscreen=true] .controls .progress {
 		margin-top:2.5rem;
 	}
 	.controls .progress {
-		/*display:table-caption;*/ /* this trick doesn't work as elements are floated and the layout doesn't work */
+		/*display:table-subtitle;*/ /* this trick doesn't work as elements are floated and the layout doesn't work */
 		position:absolute;
 		top:0;
 		width:100%;
@@ -298,11 +298,11 @@ figure[data-fullscreen=true] .controls .progress {
 	.controls button {
 		background-position:center center;
 	}
-	.controls button[data-state="captions"] {
+	.controls button[data-state="subtitles"] {
 		width:10%;
 		height:2.2rem;
 	}
-	.captions-menu {
+	.subtitles-menu {
 		bottom:42%;
 	}
 	figcaption {
